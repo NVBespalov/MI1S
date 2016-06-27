@@ -1,0 +1,545 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		360316831D21A55400BBCBB0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 360316821D21A55400BBCBB0 /* main.m */; };
+		360316861D21A55400BBCBB0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 360316851D21A55400BBCBB0 /* AppDelegate.m */; };
+		360316891D21A55400BBCBB0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 360316881D21A55400BBCBB0 /* ViewController.m */; };
+		3603168C1D21A55400BBCBB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3603168A1D21A55400BBCBB0 /* Main.storyboard */; };
+		3603168F1D21A55400BBCBB0 /* MI1SPulse.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3603168D1D21A55400BBCBB0 /* MI1SPulse.xcdatamodeld */; };
+		360316911D21A55400BBCBB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 360316901D21A55400BBCBB0 /* Assets.xcassets */; };
+		360316941D21A55400BBCBB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 360316921D21A55400BBCBB0 /* LaunchScreen.storyboard */; };
+		3603169F1D21A55400BBCBB0 /* MI1SPulseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3603169E1D21A55400BBCBB0 /* MI1SPulseTests.m */; };
+		360316AA1D21A55400BBCBB0 /* MI1SPulseUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 360316A91D21A55400BBCBB0 /* MI1SPulseUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3603169B1D21A55400BBCBB0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 360316761D21A55400BBCBB0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3603167D1D21A55400BBCBB0;
+			remoteInfo = MI1SPulse;
+		};
+		360316A61D21A55400BBCBB0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 360316761D21A55400BBCBB0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3603167D1D21A55400BBCBB0;
+			remoteInfo = MI1SPulse;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3603167E1D21A55400BBCBB0 /* MI1SPulse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MI1SPulse.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		360316821D21A55400BBCBB0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		360316841D21A55400BBCBB0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		360316851D21A55400BBCBB0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		360316871D21A55400BBCBB0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		360316881D21A55400BBCBB0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3603168B1D21A55400BBCBB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3603168E1D21A55400BBCBB0 /* MI1SPulse.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MI1SPulse.xcdatamodel; sourceTree = "<group>"; };
+		360316901D21A55400BBCBB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		360316931D21A55400BBCBB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		360316951D21A55400BBCBB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3603169A1D21A55400BBCBB0 /* MI1SPulseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MI1SPulseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3603169E1D21A55400BBCBB0 /* MI1SPulseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MI1SPulseTests.m; sourceTree = "<group>"; };
+		360316A01D21A55400BBCBB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		360316A51D21A55400BBCBB0 /* MI1SPulseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MI1SPulseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		360316A91D21A55400BBCBB0 /* MI1SPulseUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MI1SPulseUITests.m; sourceTree = "<group>"; };
+		360316AB1D21A55400BBCBB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3603167B1D21A55400BBCBB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		360316971D21A55400BBCBB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		360316A21D21A55400BBCBB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		360316751D21A55400BBCBB0 = {
+			isa = PBXGroup;
+			children = (
+				360316801D21A55400BBCBB0 /* MI1SPulse */,
+				3603169D1D21A55400BBCBB0 /* MI1SPulseTests */,
+				360316A81D21A55400BBCBB0 /* MI1SPulseUITests */,
+				3603167F1D21A55400BBCBB0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3603167F1D21A55400BBCBB0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3603167E1D21A55400BBCBB0 /* MI1SPulse.app */,
+				3603169A1D21A55400BBCBB0 /* MI1SPulseTests.xctest */,
+				360316A51D21A55400BBCBB0 /* MI1SPulseUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		360316801D21A55400BBCBB0 /* MI1SPulse */ = {
+			isa = PBXGroup;
+			children = (
+				360316841D21A55400BBCBB0 /* AppDelegate.h */,
+				360316851D21A55400BBCBB0 /* AppDelegate.m */,
+				360316871D21A55400BBCBB0 /* ViewController.h */,
+				360316881D21A55400BBCBB0 /* ViewController.m */,
+				3603168A1D21A55400BBCBB0 /* Main.storyboard */,
+				360316901D21A55400BBCBB0 /* Assets.xcassets */,
+				360316921D21A55400BBCBB0 /* LaunchScreen.storyboard */,
+				360316951D21A55400BBCBB0 /* Info.plist */,
+				3603168D1D21A55400BBCBB0 /* MI1SPulse.xcdatamodeld */,
+				360316811D21A55400BBCBB0 /* Supporting Files */,
+			);
+			path = MI1SPulse;
+			sourceTree = "<group>";
+		};
+		360316811D21A55400BBCBB0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				360316821D21A55400BBCBB0 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3603169D1D21A55400BBCBB0 /* MI1SPulseTests */ = {
+			isa = PBXGroup;
+			children = (
+				3603169E1D21A55400BBCBB0 /* MI1SPulseTests.m */,
+				360316A01D21A55400BBCBB0 /* Info.plist */,
+			);
+			path = MI1SPulseTests;
+			sourceTree = "<group>";
+		};
+		360316A81D21A55400BBCBB0 /* MI1SPulseUITests */ = {
+			isa = PBXGroup;
+			children = (
+				360316A91D21A55400BBCBB0 /* MI1SPulseUITests.m */,
+				360316AB1D21A55400BBCBB0 /* Info.plist */,
+			);
+			path = MI1SPulseUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3603167D1D21A55400BBCBB0 /* MI1SPulse */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 360316AE1D21A55400BBCBB0 /* Build configuration list for PBXNativeTarget "MI1SPulse" */;
+			buildPhases = (
+				3603167A1D21A55400BBCBB0 /* Sources */,
+				3603167B1D21A55400BBCBB0 /* Frameworks */,
+				3603167C1D21A55400BBCBB0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MI1SPulse;
+			productName = MI1SPulse;
+			productReference = 3603167E1D21A55400BBCBB0 /* MI1SPulse.app */;
+			productType = "com.apple.product-type.application";
+		};
+		360316991D21A55400BBCBB0 /* MI1SPulseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 360316B11D21A55400BBCBB0 /* Build configuration list for PBXNativeTarget "MI1SPulseTests" */;
+			buildPhases = (
+				360316961D21A55400BBCBB0 /* Sources */,
+				360316971D21A55400BBCBB0 /* Frameworks */,
+				360316981D21A55400BBCBB0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3603169C1D21A55400BBCBB0 /* PBXTargetDependency */,
+			);
+			name = MI1SPulseTests;
+			productName = MI1SPulseTests;
+			productReference = 3603169A1D21A55400BBCBB0 /* MI1SPulseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		360316A41D21A55400BBCBB0 /* MI1SPulseUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 360316B41D21A55400BBCBB0 /* Build configuration list for PBXNativeTarget "MI1SPulseUITests" */;
+			buildPhases = (
+				360316A11D21A55400BBCBB0 /* Sources */,
+				360316A21D21A55400BBCBB0 /* Frameworks */,
+				360316A31D21A55400BBCBB0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				360316A71D21A55400BBCBB0 /* PBXTargetDependency */,
+			);
+			name = MI1SPulseUITests;
+			productName = MI1SPulseUITests;
+			productReference = 360316A51D21A55400BBCBB0 /* MI1SPulseUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		360316761D21A55400BBCBB0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Nick Bespalov";
+				TargetAttributes = {
+					3603167D1D21A55400BBCBB0 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = TXD733XHFM;
+					};
+					360316991D21A55400BBCBB0 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 3603167D1D21A55400BBCBB0;
+					};
+					360316A41D21A55400BBCBB0 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 3603167D1D21A55400BBCBB0;
+					};
+				};
+			};
+			buildConfigurationList = 360316791D21A55400BBCBB0 /* Build configuration list for PBXProject "MI1SPulse" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 360316751D21A55400BBCBB0;
+			productRefGroup = 3603167F1D21A55400BBCBB0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3603167D1D21A55400BBCBB0 /* MI1SPulse */,
+				360316991D21A55400BBCBB0 /* MI1SPulseTests */,
+				360316A41D21A55400BBCBB0 /* MI1SPulseUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3603167C1D21A55400BBCBB0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				360316941D21A55400BBCBB0 /* LaunchScreen.storyboard in Resources */,
+				360316911D21A55400BBCBB0 /* Assets.xcassets in Resources */,
+				3603168C1D21A55400BBCBB0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		360316981D21A55400BBCBB0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		360316A31D21A55400BBCBB0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3603167A1D21A55400BBCBB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				360316891D21A55400BBCBB0 /* ViewController.m in Sources */,
+				3603168F1D21A55400BBCBB0 /* MI1SPulse.xcdatamodeld in Sources */,
+				360316861D21A55400BBCBB0 /* AppDelegate.m in Sources */,
+				360316831D21A55400BBCBB0 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		360316961D21A55400BBCBB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3603169F1D21A55400BBCBB0 /* MI1SPulseTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		360316A11D21A55400BBCBB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				360316AA1D21A55400BBCBB0 /* MI1SPulseUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3603169C1D21A55400BBCBB0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3603167D1D21A55400BBCBB0 /* MI1SPulse */;
+			targetProxy = 3603169B1D21A55400BBCBB0 /* PBXContainerItemProxy */;
+		};
+		360316A71D21A55400BBCBB0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3603167D1D21A55400BBCBB0 /* MI1SPulse */;
+			targetProxy = 360316A61D21A55400BBCBB0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3603168A1D21A55400BBCBB0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3603168B1D21A55400BBCBB0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		360316921D21A55400BBCBB0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				360316931D21A55400BBCBB0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		360316AC1D21A55400BBCBB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		360316AD1D21A55400BBCBB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		360316AF1D21A55400BBCBB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = MI1SPulse/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.hldns.iSoft.www.MI1SPulse;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		360316B01D21A55400BBCBB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = MI1SPulse/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.hldns.iSoft.www.MI1SPulse;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		360316B21D21A55400BBCBB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MI1SPulseTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.hldns.iSoft.www.MI1SPulseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MI1SPulse.app/MI1SPulse";
+			};
+			name = Debug;
+		};
+		360316B31D21A55400BBCBB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MI1SPulseTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.hldns.iSoft.www.MI1SPulseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MI1SPulse.app/MI1SPulse";
+			};
+			name = Release;
+		};
+		360316B51D21A55400BBCBB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MI1SPulseUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.hldns.iSoft.www.MI1SPulseUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MI1SPulse;
+			};
+			name = Debug;
+		};
+		360316B61D21A55400BBCBB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MI1SPulseUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.hldns.iSoft.www.MI1SPulseUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MI1SPulse;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		360316791D21A55400BBCBB0 /* Build configuration list for PBXProject "MI1SPulse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				360316AC1D21A55400BBCBB0 /* Debug */,
+				360316AD1D21A55400BBCBB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		360316AE1D21A55400BBCBB0 /* Build configuration list for PBXNativeTarget "MI1SPulse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				360316AF1D21A55400BBCBB0 /* Debug */,
+				360316B01D21A55400BBCBB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		360316B11D21A55400BBCBB0 /* Build configuration list for PBXNativeTarget "MI1SPulseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				360316B21D21A55400BBCBB0 /* Debug */,
+				360316B31D21A55400BBCBB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		360316B41D21A55400BBCBB0 /* Build configuration list for PBXNativeTarget "MI1SPulseUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				360316B51D21A55400BBCBB0 /* Debug */,
+				360316B61D21A55400BBCBB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3603168D1D21A55400BBCBB0 /* MI1SPulse.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3603168E1D21A55400BBCBB0 /* MI1SPulse.xcdatamodel */,
+			);
+			currentVersion = 3603168E1D21A55400BBCBB0 /* MI1SPulse.xcdatamodel */;
+			path = MI1SPulse.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 360316761D21A55400BBCBB0 /* Project object */;
+}
