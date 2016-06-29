@@ -26,6 +26,6 @@
 // Properties to handle storing the BPM and heart beat
 @property (nonatomic, strong) UILabel    *heartRateBPM;
 @property (nonatomic, retain) NSTimer    *pulseTimer;
-
+- (void) getHeartBPMData:(CBCharacteristic *)characteristic error:(NSError *)error;
 @end
 

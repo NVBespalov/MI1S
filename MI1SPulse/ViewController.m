@@ -101,6 +101,11 @@
             [self.mi1S readValueForCharacteristic:aChar];
             
         }
+        if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"FF0E"]])  {
+//            [self.mi1S readValueForCharacteristic:aChar];
+            [self.mi1S setNotifyValue:YES forCharacteristic:aChar];
+            
+        }
         if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"FF01"]])  {
             [self.mi1S readValueForCharacteristic:aChar];
             
@@ -108,19 +113,48 @@
         if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"FF02"]]) {
             [self.mi1S readValueForCharacteristic:aChar];
         }
+        
+        if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"FF04"]]) {
+            //CHAR_USER_INFO
+//            unsigned int uid = 20271234;
+//            unsigned int gender = 1;
+//            unsigned int age = 32;
+//            unsigned int height = 160;
+//            unsigned int weight = 40;
+//            char alias = 'J';
+//            unsigned int type = 0;
+//            unsigned char mac = 'C8:0F:10:32:5B:3C';
+            //unsigned char bytes1[] = {(uid & 0xff), (uid >> 8 & 0xff), (uid >> 16 & 0xff), (uid >> 24 & 0xff), gender, age, height, weight, type, 4, 0, alias, mac};
+            unsigned char bytes[] = {12, 125, 123, 96, 1, 33, -81, 80, 0, 4, 0, 110, 105, 99, 107, 0, 0, 0, 0, -96};
+            NSData *data = [NSData dataWithBytes:bytes length:sizeof(bytes)];
+            [self.mi1S setNotifyValue:YES forCharacteristic:aChar];
+            [self.mi1S writeValue:data forCharacteristic:aChar type:CBCharacteristicWriteWithoutResponse];
+            
+        }
         if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"FF06"]]) {
+            [self.mi1S readValueForCharacteristic:aChar];
+        }
+        if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"FF05"]]) {
+            //enableSensorDataNotify
+            unsigned char bytes[] = {18, 1};
+            NSData *data = [NSData dataWithBytes:bytes length:sizeof(bytes)];
+            [self.mi1S writeValue:data forCharacteristic:aChar type:CBCharacteristicWriteWithoutResponse];
             [self.mi1S readValueForCharacteristic:aChar];
         }
         if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"2A37"]])  {
             [self.mi1S setNotifyValue:YES forCharacteristic:aChar];
         }
         if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"2A39"]])  {
+            //HR Control point
             [self.mi1S readValueForCharacteristic:aChar];
+            unsigned char bytes[] = {21, 2, 1};
+            NSData *data = [NSData dataWithBytes:bytes length:sizeof(bytes)];
+            [self.mi1S writeValue:data forCharacteristic:aChar type:CBCharacteristicWriteWithoutResponse];
         }
         if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"2A06"]])  {
             [self.mi1S readValueForCharacteristic:aChar];
-            //int i = 01;
-            //[self.mi1S writeValue:[NSData dataWithBytes: &i length: sizeof(i)] forCharacteristic:aChar type:CBCharacteristicWriteWithoutResponse];
+//            int i = 04;
+//            [self.mi1S writeValue:[NSData dataWithBytes: &i length: sizeof(i)] forCharacteristic:aChar type:CBCharacteristicWriteWithoutResponse];
         }
     }
 }
@@ -131,7 +165,7 @@
         NSData *data = [characteristic value];      // 1
         const uint8_t *reportData = [data bytes];
         NSLog(@"The battery power %d %%", reportData[0]);
-        NSLog(@"The battery charged %d times", (0xffff & ((0xff & reportData[7]) | (0xff & reportData[8]) << 8)));
+        NSLog(@"The battery charged %d times", 0xffff & ((0xff & reportData[7]) | (0xff & reportData[8]) << 8));
         NSLog(@"The battery status is %d", reportData[9]);
         NSLog(@"Last charged %d/%d/%d %d:%d", reportData[1] + 2000, reportData[2], reportData[3], reportData[4], reportData[5]);
     }
@@ -141,6 +175,12 @@
         NSLog(@"Device name is %@", [[NSString alloc] initWithData:characteristic.value encoding:NSUTF8StringEncoding]);
         
     }
+    if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:@"FF04"]]) {
+        NSData *data = [characteristic value];      // 1
+        const uint8_t *reportData = [data bytes];
+        //NSLog(@"UUID %d", reportData[3] << 24 | (reportData[2] & 0xFF) << 16 | (reportData[1] & 0xFF) << 8 | (reportData[0] & 0xFF));
+        
+    }
     if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:@"FF06"]]) {
         NSData *data = [characteristic value];      // 1
         const uint8_t *reportData = [data bytes];
@@ -148,9 +188,13 @@
         
     }
     if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:@"2A39"]]) {
+        //[self getHeartBPMData:characteristic error:error];
+        
+    }
+    if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:@"FF05"]]) {
+        //[self getHeartBPMData:characteristic error:error];
         NSData *data = [characteristic value];      // 1
         const uint8_t *reportData = [data bytes];
-        NSLog(@"Control point %u", reportData[1]);
         
     }
     if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:@"2A37"]]) {
@@ -168,6 +212,10 @@
         const uint8_t *reportData = [data bytes];
         
         NSLog(@"base firmware version %u.%u.%u.%u", reportData[13], reportData[14], reportData[15], reportData[16]);
+    }
+    if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:@"FF0E"]]) {
+        NSData *data = [characteristic value];      // 1
+        const uint8_t *reportData = [data bytes];
     }
 }
 @end
