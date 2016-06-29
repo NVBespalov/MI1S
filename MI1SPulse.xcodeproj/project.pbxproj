@@ -509,6 +509,7 @@
 				360316B01D21A55400BBCBB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		360316B11D21A55400BBCBB0 /* Build configuration list for PBXNativeTarget "MI1SPulseTests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +518,7 @@
 				360316B31D21A55400BBCBB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		360316B41D21A55400BBCBB0 /* Build configuration list for PBXNativeTarget "MI1SPulseUITests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +527,7 @@
 				360316B61D21A55400BBCBB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
