@@ -18,29 +18,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.mi1SDeviceData = nil;
-    
-    // Clear out textView
-    [self.deviceInfo setText:@""];
-    
-    // Create our Heart Rate BPM Label
-    self.heartRateBPM = [[UILabel alloc] initWithFrame:CGRectMake(55, 30, 75, 50)];
-    [self.heartRateBPM setTextColor:[UIColor whiteColor]];
-    [self.heartRateBPM setText:[NSString stringWithFormat:@"%i", 0]];
-    
-    
     // Scan for all available CoreBluetooth LE devices
 //    NSArray *services = @[[CBUUID UUIDWithString:POLARH7_HRM_HEART_RATE_SERVICE_UUID], [CBUUID UUIDWithString:POLARH7_HRM_DEVICE_INFO_SERVICE_UUID]];
-    
     CBCentralManager *centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
     self.centralManager = centralManager;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-// method called whenever the device state changes.
 - (void)centralManagerDidUpdateState:(CBCentralManager *)central
 {
     // Determine the state of the peripheral
@@ -61,7 +44,7 @@
         NSLog(@"CoreBluetooth BLE hardware is unsupported on this platform");
     }
 }
-// CBCentralManagerDelegate - This is called with the CBPeripheral class as its main input parameter. This contains most of the information there is to know about a BLE peripheral.
+
 - (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI
 {
     NSString *localName = [advertisementData objectForKey:CBAdvertisementDataLocalNameKey];
@@ -74,60 +57,75 @@
         [self.centralManager connectPeripheral:peripheral options:nil];
     }
 }
-// method called whenever we have successfully connected to the BLE peripheral
+
 - (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral
 {
     NSLog(@"Connected to LE Device: %@ ", peripheral.name);
     [peripheral setDelegate:self];
-    [peripheral discoverServices:nil];
+    [peripheral discoverServices:@[[CBUUID UUIDWithString:@"180D"],[CBUUID UUIDWithString:@"FEE0"]]];
     self.connected = [NSString stringWithFormat:@"Connected: %@", peripheral.state == CBPeripheralStateConnected ? @"YES" : @"NO"];
 }
-// CBPeripheralDelegate - Invoked when you discover the peripheral's available services.
+
 - (void)peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error
 {
     for (CBService *service in peripheral.services) {
-        
+        if([service.UUID isEqual:[CBUUID UUIDWithString:@"180D"]]){
+            self.heartRateService = service;
+            [peripheral discoverCharacteristics:nil forService:service];
+            continue;
+        }
+        if([service.UUID isEqual:[CBUUID UUIDWithString:@"FEE0"]]){
+            self.miliService = service;
+            [peripheral discoverCharacteristics:nil forService:service];
+            continue;
+        }
         [peripheral discoverCharacteristics:nil forService:service];
+        
     }
+    
+
 }
-// Invoked when you discover the characteristics of a specified service.
+
 - (void)peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(NSError *)error
 {
-    
     for (CBCharacteristic *aChar in service.characteristics) {
-        if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"2A37"]])  {
-            [self.mi1S setNotifyValue:YES forCharacteristic:aChar];
-        }
-    }
-    for (CBCharacteristic *aChar in service.characteristics) {
+//        NSLog(@"Discovered char: %@ in service %@", aChar.UUID, service.UUID);
+//        NSLog(@"------------------------------------------------------------");
         if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"FF04"]]) {
-            //CHAR_USER_INFO
-            //            unsigned int uid = 20271234;
-            //            unsigned int gender = 1;
-            //            unsigned int age = 32;
-            //            unsigned int height = 160;
-            //            unsigned int weight = 40;
-            //            char alias = 'J';
-            //            unsigned int type = 0;
-            //            unsigned char mac = 'C8:0F:10:32:5B:3C';
-            //unsigned char bytes1[] = {(uid & 0xff), (uid >> 8 & 0xff), (uid >> 16 & 0xff), (uid >> 24 & 0xff), gender, age, height, weight, type, 4, 0, alias, mac};
-            unsigned char bytes[] = {-126, 80, 53, 1, 1, 32, -96, 40, 0, 4, 0, 49, -27, -109, -120, -27, -109, -120, 0, 81};
-            NSData *data = [NSData dataWithBytes:bytes length:sizeof(bytes)];
-            [self.mi1S setNotifyValue:YES forCharacteristic:aChar];
-            [self.mi1S writeValue:data forCharacteristic:aChar type:CBCharacteristicWriteWithoutResponse];
+            self.userInfoCharacteristic = aChar;
+        }
+        if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"FF03"]]) {
+            self.notificationCharacteristic = aChar;
+        }
+        if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"2A37"]])  {
+            self.heartRateCharacteristic = aChar;
+        }
+        if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"2A39"]])  {
+            self.heartRateControlPointCharacteristic = aChar;
+        }
+        if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"FF0C"]])  {
+            self.battery = aChar;
+            //[self.mi1S readValueForCharacteristic:aChar];
             
         }
+        if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"FF07"]])  {
+            self.activityCharacteristic = aChar;
+            //[self.mi1S readValueForCharacteristic:aChar];
+            
+        }
+        if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"FF06"]])  {
+            self.stepsCharacteristic = aChar;
+            //[self.mi1S readValueForCharacteristic:aChar];
+            
+        }
+        if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"2A06"]])  {
+            self.vibrateNotificationsCharacteristic = aChar;
+            
+        }
+        
     }
     
-    for (CBCharacteristic *aChar in service.characteristics) {
-        if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"2A39"]])  {
-            //HR Control point
-            [self.mi1S readValueForCharacteristic:aChar];
-            unsigned char bytes[] = {21, 2, 1};
-            NSData *data = [NSData dataWithBytes:bytes length:sizeof(bytes)];
-            [self.mi1S writeValue:data forCharacteristic:aChar type:CBCharacteristicWriteWithoutResponse];
-        }
-    }
+    
 
 //        NSLog(@"Discovered char: %@ in service %@", aChar.UUID, service.UUID);
 //        NSLog(@"------------------------------------------------------------");
@@ -249,5 +247,70 @@
         NSData *data = [characteristic value];      // 1
         const uint8_t *reportData = [data bytes];
     }
+}
+//- (void)peripheral:(CBPeripheral *)peripheral didDiscoverDescriptorsForCharacteristic:(CBCharacteristic *)characteristic error:(nullable NSError *)error {
+//    for(CBDescriptor *aCharDesc in characteristic.descriptors) {
+//        NSLog(@"Enabling pulse real time notifications");
+//        if([aCharDesc.UUID isEqual:[CBUUID UUIDWithString:@"2902"]]){
+//            unsigned char bytes[] = {0x01, 0x00};
+//            NSData *data = [NSData dataWithBytes:bytes length:sizeof(bytes)];
+//            [peripheral writeValue:data forDescriptor:aCharDesc];
+//        }
+//    }
+//}
+- (void)peripheral:(CBPeripheral *)peripheral didUpdateNotificationStateForCharacteristic:(CBCharacteristic *)characteristic error:(nullable NSError *)error {
+    
+}
+- (void)peripheral:(CBPeripheral *)peripheral didWriteValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
+    
+}
+- (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error {
+    NSLog(@"Disconnected from central");
+    [self.centralManager scanForPeripheralsWithServices:nil options:nil];
+}
+- (IBAction)mesureHeartRate:(id)sender {
+    unsigned char bytes[] = {21, 2, 1};
+    NSData *data = [NSData dataWithBytes:bytes length:sizeof(bytes)];
+    NSLog(@"Setting control point ");
+    [self.mi1S writeValue:data forCharacteristic:self.heartRateControlPointCharacteristic type:CBCharacteristicWriteWithoutResponse];
+}
+
+- (IBAction)setUserinfo:(id)sender {
+    //                unsigned int uid = 20271234;
+    //                unsigned int gender = 1;
+    //                unsigned int age = 32;
+    //                unsigned int height = 160;
+    //                unsigned int weight = 40;
+    //                char alias = 'J';
+    //                unsigned int type = 0;
+    //                unsigned char mac = 'C8:0F:10:32:5B:3C';
+    //unsigned char bytes1[] = {(uid & 0xff), (uid >> 8 & 0xff), (uid >> 16 & 0xff), (uid >> 24 & 0xff), gender, age, height, weight, type, 4, 0, alias, mac};
+    unsigned char bytes[] = {-126, 80, 53, 1, 1, 32, -96, 40, 0, 4, 0, 49, -27, -109, -120, -27, -109, -120, 0, 81};
+    NSData *data = [NSData dataWithBytes:bytes length:sizeof(bytes)];
+    NSLog(@"Setting user info");
+    [self.mi1S writeValue:data forCharacteristic:self.userInfoCharacteristic type:CBCharacteristicWriteWithoutResponse];
+
+}
+
+- (IBAction)vibrate:(id)sender {
+    int i = 04;
+    [self.mi1S writeValue:[NSData dataWithBytes: &i length: sizeof(i)] forCharacteristic:self.vibrateNotificationsCharacteristic type:CBCharacteristicWriteWithoutResponse];
+
+}
+
+- (IBAction)setNotifications:(id)sender {
+     NSLog(@"Setting user info notifications");
+    [self.mi1S setNotifyValue:YES forCharacteristic:self.heartRateCharacteristic];
+    [self.mi1S setNotifyValue:YES forCharacteristic:self.activityCharacteristic];
+    [self.mi1S setNotifyValue:YES forCharacteristic:self.stepsCharacteristic];
+    [self.mi1S setNotifyValue:YES forCharacteristic:self.notificationCharacteristic];
+}
+
+- (IBAction)battery:(id)sender {
+    [self.mi1S readValueForCharacteristic:self.battery];
+}
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 @end

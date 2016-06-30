@@ -13,9 +13,16 @@
 @interface ViewController : UIViewController <CBCentralManagerDelegate, CBPeripheralDelegate>
 @property (nonatomic, strong) CBCentralManager *centralManager;
 @property (nonatomic, strong) CBPeripheral     *mi1S;
+@property (nonatomic, strong) CBService *heartRateService;
+@property (nonatomic, strong) CBService *miliService;
 @property (nonatomic, strong) CBCharacteristic *battery;
-@property (nonatomic, strong) IBOutlet UITextView  *deviceInfo;
-
+@property (nonatomic, strong) CBCharacteristic *heartRateCharacteristic;
+@property (nonatomic, strong) CBCharacteristic *heartRateControlPointCharacteristic;
+@property (nonatomic, strong) CBCharacteristic *userInfoCharacteristic;
+@property (nonatomic, strong) CBCharacteristic *activityCharacteristic;
+@property (nonatomic, strong) CBCharacteristic *stepsCharacteristic;
+@property (nonatomic, strong) CBCharacteristic *notificationCharacteristic;
+@property (nonatomic, strong) CBCharacteristic *vibrateNotificationsCharacteristic;
 // Properties to hold data characteristics for the peripheral device
 @property (nonatomic, strong) NSString   *connected;
 @property (nonatomic, strong) NSString   *bodyData;
@@ -27,5 +34,9 @@
 @property (nonatomic, strong) UILabel    *heartRateBPM;
 @property (nonatomic, retain) NSTimer    *pulseTimer;
 - (void) getHeartBPMData:(CBCharacteristic *)characteristic error:(NSError *)error;
+- (IBAction)setUserinfo:(id)sender;
+- (IBAction)vibrate:(id)sender;
+- (IBAction)setNotifications:(id)sender;
+- (IBAction)battery:(id)sender;
 @end
 

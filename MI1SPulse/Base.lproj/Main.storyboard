@@ -16,11 +16,49 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UNG-hv-ZcF">
+                                <rect key="frame" x="208" y="66" width="87" height="30"/>
+                                <state key="normal" title="Notifications"/>
+                                <connections>
+                                    <action selector="setNotifications:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8U0-gO-6k5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rGm-ql-uK1">
+                                <rect key="frame" x="208" y="28" width="85" height="30"/>
+                                <state key="normal" title="Set Userinfo"/>
+                                <connections>
+                                    <action selector="setUserinfo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vfb-kt-EI1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uzX-2S-pHd">
+                                <rect key="frame" x="208" y="104" width="50" height="30"/>
+                                <state key="normal" title="Battery"/>
+                                <connections>
+                                    <action selector="battery:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t6s-wI-k6C"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="azP-kR-tTS">
+                                <rect key="frame" x="206" y="180" width="50" height="30"/>
+                                <state key="normal" title="Vibrate"/>
+                                <connections>
+                                    <action selector="vibrate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I6o-2m-lDi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B6Y-21-ctY">
+                                <rect key="frame" x="208" y="142" width="51" height="30"/>
+                                <state key="normal" title="Mesure"/>
+                                <connections>
+                                    <action selector="mesureHeartRate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W7v-W8-e8b"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-29" y="123"/>
         </scene>
     </scenes>
 </document>
