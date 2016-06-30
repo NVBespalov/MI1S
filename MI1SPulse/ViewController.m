@@ -95,55 +95,31 @@
 {
     
     for (CBCharacteristic *aChar in service.characteristics) {
-//        NSLog(@"Discovered char: %@ in service %@", aChar.UUID, service.UUID);
-//        NSLog(@"------------------------------------------------------------");
-        if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"FF0C"]])  {
-            [self.mi1S readValueForCharacteristic:aChar];
-            
-        }
-        if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"FF0E"]])  {
-//            [self.mi1S readValueForCharacteristic:aChar];
-            [self.mi1S setNotifyValue:YES forCharacteristic:aChar];
-            
-        }
-        if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"FF01"]])  {
-            [self.mi1S readValueForCharacteristic:aChar];
-            
-        }
-        if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"FF02"]]) {
-            [self.mi1S readValueForCharacteristic:aChar];
-        }
-        
-        if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"FF04"]]) {
-            //CHAR_USER_INFO
-//            unsigned int uid = 20271234;
-//            unsigned int gender = 1;
-//            unsigned int age = 32;
-//            unsigned int height = 160;
-//            unsigned int weight = 40;
-//            char alias = 'J';
-//            unsigned int type = 0;
-//            unsigned char mac = 'C8:0F:10:32:5B:3C';
-            //unsigned char bytes1[] = {(uid & 0xff), (uid >> 8 & 0xff), (uid >> 16 & 0xff), (uid >> 24 & 0xff), gender, age, height, weight, type, 4, 0, alias, mac};
-            unsigned char bytes[] = {12, 125, 123, 96, 1, 33, -81, 80, 0, 4, 0, 110, 105, 99, 107, 0, 0, 0, 0, -96};
-            NSData *data = [NSData dataWithBytes:bytes length:sizeof(bytes)];
-            [self.mi1S setNotifyValue:YES forCharacteristic:aChar];
-            [self.mi1S writeValue:data forCharacteristic:aChar type:CBCharacteristicWriteWithoutResponse];
-            
-        }
-        if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"FF06"]]) {
-            [self.mi1S readValueForCharacteristic:aChar];
-        }
-        if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"FF05"]]) {
-            //enableSensorDataNotify
-            unsigned char bytes[] = {18, 1};
-            NSData *data = [NSData dataWithBytes:bytes length:sizeof(bytes)];
-            [self.mi1S writeValue:data forCharacteristic:aChar type:CBCharacteristicWriteWithoutResponse];
-            [self.mi1S readValueForCharacteristic:aChar];
-        }
         if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"2A37"]])  {
             [self.mi1S setNotifyValue:YES forCharacteristic:aChar];
         }
+    }
+    for (CBCharacteristic *aChar in service.characteristics) {
+        if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"FF04"]]) {
+            //CHAR_USER_INFO
+            //            unsigned int uid = 20271234;
+            //            unsigned int gender = 1;
+            //            unsigned int age = 32;
+            //            unsigned int height = 160;
+            //            unsigned int weight = 40;
+            //            char alias = 'J';
+            //            unsigned int type = 0;
+            //            unsigned char mac = 'C8:0F:10:32:5B:3C';
+            //unsigned char bytes1[] = {(uid & 0xff), (uid >> 8 & 0xff), (uid >> 16 & 0xff), (uid >> 24 & 0xff), gender, age, height, weight, type, 4, 0, alias, mac};
+            unsigned char bytes[] = {-126, 80, 53, 1, 1, 32, -96, 40, 0, 4, 0, 49, -27, -109, -120, -27, -109, -120, 0, 81};
+            NSData *data = [NSData dataWithBytes:bytes length:sizeof(bytes)];
+            [self.mi1S setNotifyValue:YES forCharacteristic:aChar];
+            [self.mi1S writeValue:data forCharacteristic:aChar type:CBCharacteristicWriteWithoutResponse];
+            
+        }
+    }
+    
+    for (CBCharacteristic *aChar in service.characteristics) {
         if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"2A39"]])  {
             //HR Control point
             [self.mi1S readValueForCharacteristic:aChar];
@@ -151,12 +127,68 @@
             NSData *data = [NSData dataWithBytes:bytes length:sizeof(bytes)];
             [self.mi1S writeValue:data forCharacteristic:aChar type:CBCharacteristicWriteWithoutResponse];
         }
-        if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"2A06"]])  {
-            [self.mi1S readValueForCharacteristic:aChar];
-//            int i = 04;
-//            [self.mi1S writeValue:[NSData dataWithBytes: &i length: sizeof(i)] forCharacteristic:aChar type:CBCharacteristicWriteWithoutResponse];
-        }
     }
+
+//        NSLog(@"Discovered char: %@ in service %@", aChar.UUID, service.UUID);
+//        NSLog(@"------------------------------------------------------------");
+//        if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"FF0C"]])  {
+//            [self.mi1S readValueForCharacteristic:aChar];
+//            
+//        }
+//        if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"FF0E"]])  {
+////            [self.mi1S readValueForCharacteristic:aChar];
+//            [self.mi1S setNotifyValue:YES forCharacteristic:aChar];
+//            
+//        }
+//        if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"FF01"]])  {
+//            [self.mi1S readValueForCharacteristic:aChar];
+//            
+//        }
+//        if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"FF02"]]) {
+//            [self.mi1S readValueForCharacteristic:aChar];
+//        }
+//        
+//        if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"FF04"]]) {
+//            //CHAR_USER_INFO
+////            unsigned int uid = 20271234;
+////            unsigned int gender = 1;
+////            unsigned int age = 32;
+////            unsigned int height = 160;
+////            unsigned int weight = 40;
+////            char alias = 'J';
+////            unsigned int type = 0;
+////            unsigned char mac = 'C8:0F:10:32:5B:3C';
+//            //unsigned char bytes1[] = {(uid & 0xff), (uid >> 8 & 0xff), (uid >> 16 & 0xff), (uid >> 24 & 0xff), gender, age, height, weight, type, 4, 0, alias, mac};
+//            unsigned char bytes[] = {-126, 80, 53, 1, 1, 32, -96, 40, 0, 4, 0, 49, -27, -109, -120, -27, -109, -120, 0, 81};
+//            NSData *data = [NSData dataWithBytes:bytes length:sizeof(bytes)];
+//            [self.mi1S setNotifyValue:YES forCharacteristic:aChar];
+//            [self.mi1S writeValue:data forCharacteristic:aChar type:CBCharacteristicWriteWithoutResponse];
+//            
+//        }
+//        if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"FF06"]]) {
+//            [self.mi1S readValueForCharacteristic:aChar];
+//        }
+//        if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"FF05"]]) {
+//            //enableSensorDataNotify
+//            unsigned char bytes[] = {18, 1};
+//            NSData *data = [NSData dataWithBytes:bytes length:sizeof(bytes)];
+//            [self.mi1S writeValue:data forCharacteristic:aChar type:CBCharacteristicWriteWithoutResponse];
+//            [self.mi1S readValueForCharacteristic:aChar];
+//        }
+//        
+//        if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"2A39"]])  {
+//            //HR Control point
+//            [self.mi1S readValueForCharacteristic:aChar];
+//            unsigned char bytes[] = {21, 2, 1};
+//            NSData *data = [NSData dataWithBytes:bytes length:sizeof(bytes)];
+//            [self.mi1S writeValue:data forCharacteristic:aChar type:CBCharacteristicWriteWithoutResponse];
+//        }
+//        if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"2A06"]])  {
+//            [self.mi1S readValueForCharacteristic:aChar];
+////            int i = 04;
+////            [self.mi1S writeValue:[NSData dataWithBytes: &i length: sizeof(i)] forCharacteristic:aChar type:CBCharacteristicWriteWithoutResponse];
+//        }
+//    }
 }
 // Invoked when you retrieve a specified characteristic's value, or when the peripheral device notifies your app that the characteristic's value has changed.
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
