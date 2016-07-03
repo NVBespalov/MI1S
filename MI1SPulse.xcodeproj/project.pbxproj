@@ -16,6 +16,9 @@
 		360316941D21A55400BBCBB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 360316921D21A55400BBCBB0 /* LaunchScreen.storyboard */; };
 		3603169F1D21A55400BBCBB0 /* MI1SPulseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3603169E1D21A55400BBCBB0 /* MI1SPulseTests.m */; };
 		360316AA1D21A55400BBCBB0 /* MI1SPulseUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 360316A91D21A55400BBCBB0 /* MI1SPulseUITests.m */; };
+		36DC19041D283B64005017BC /* DataReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DC19031D283B64005017BC /* DataReader.m */; };
+		36DC19071D283DE1005017BC /* DataBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DC19061D283DE1005017BC /* DataBuilder.m */; };
+		36DC190A1D283E41005017BC /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DC19091D283E41005017BC /* Helper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,12 @@
 		360316A51D21A55400BBCBB0 /* MI1SPulseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MI1SPulseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		360316A91D21A55400BBCBB0 /* MI1SPulseUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MI1SPulseUITests.m; sourceTree = "<group>"; };
 		360316AB1D21A55400BBCBB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36DC19021D283B64005017BC /* DataReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataReader.h; sourceTree = "<group>"; };
+		36DC19031D283B64005017BC /* DataReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataReader.m; sourceTree = "<group>"; };
+		36DC19051D283DE1005017BC /* DataBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBuilder.h; sourceTree = "<group>"; };
+		36DC19061D283DE1005017BC /* DataBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBuilder.m; sourceTree = "<group>"; };
+		36DC19081D283E41005017BC /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
+		36DC19091D283E41005017BC /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +122,12 @@
 				360316951D21A55400BBCBB0 /* Info.plist */,
 				3603168D1D21A55400BBCBB0 /* MI1SPulse.xcdatamodeld */,
 				360316811D21A55400BBCBB0 /* Supporting Files */,
+				36DC19021D283B64005017BC /* DataReader.h */,
+				36DC19031D283B64005017BC /* DataReader.m */,
+				36DC19051D283DE1005017BC /* DataBuilder.h */,
+				36DC19061D283DE1005017BC /* DataBuilder.m */,
+				36DC19081D283E41005017BC /* Helper.h */,
+				36DC19091D283E41005017BC /* Helper.m */,
 			);
 			path = MI1SPulse;
 			sourceTree = "<group>";
@@ -211,6 +226,11 @@
 					3603167D1D21A55400BBCBB0 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = TXD733XHFM;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					360316991D21A55400BBCBB0 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -277,7 +297,10 @@
 				360316891D21A55400BBCBB0 /* ViewController.m in Sources */,
 				3603168F1D21A55400BBCBB0 /* MI1SPulse.xcdatamodeld in Sources */,
 				360316861D21A55400BBCBB0 /* AppDelegate.m in Sources */,
+				36DC19041D283B64005017BC /* DataReader.m in Sources */,
+				36DC190A1D283E41005017BC /* Helper.m in Sources */,
 				360316831D21A55400BBCBB0 /* main.m in Sources */,
+				36DC19071D283DE1005017BC /* DataBuilder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,8 +446,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MI1SPulse/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ru.hldns.iSoft1www.MI1SPulse;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.hldns.iSoftwww.MI1SPulse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -437,8 +461,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MI1SPulse/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ru.hldns.iSoft1www.MI1SPulse;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.hldns.iSoftwww.MI1SPulse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

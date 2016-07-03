@@ -19,6 +19,7 @@
 @property (nonatomic, strong) CBCharacteristic *heartRateCharacteristic;
 @property (nonatomic, strong) CBCharacteristic *heartRateControlPointCharacteristic;
 @property (nonatomic, strong) CBCharacteristic *userInfoCharacteristic;
+@property (nonatomic, strong) CBCharacteristic *deviceInfoCharacteristic;
 @property (nonatomic, strong) CBCharacteristic *activityCharacteristic;
 @property (nonatomic, strong) CBCharacteristic *stepsCharacteristic;
 @property (nonatomic, strong) CBCharacteristic *notificationCharacteristic;
@@ -38,5 +39,7 @@
 - (IBAction)vibrate:(id)sender;
 - (IBAction)setNotifications:(id)sender;
 - (IBAction)battery:(id)sender;
++ (NSUInteger)CRC8WithBytes:(Byte*)bytes length:(NSUInteger)length;
+- (IBAction)getDeviceInfo:(id)sender;
 @end
 
